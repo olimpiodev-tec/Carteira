@@ -1,18 +1,29 @@
-package com.example.carteira.model;
+package com.olimpiodev.tec.carteira.model;
 
-import com.example.carteira.enumeracao.LancamentoCategoria;
+import com.olimpiodev.tec.carteira.enumeracao.LancamentoCategoria;
+import com.olimpiodev.tec.carteira.util.Data;
 
 public class Lancamento {
     private int id;
     private String decricao;
     private LancamentoCategoria lancamentoCategoria;
     private Double valor;
+    private String data;
 
     public Lancamento(int id, String decricao, LancamentoCategoria lancamentoCategoria, Double valor) {
         this.id = id;
         this.decricao = decricao;
         this.lancamentoCategoria = lancamentoCategoria;
         this.valor = valor;
+        this.data = Data.getNow();
+    }
+
+    public Lancamento(int id, String decricao, LancamentoCategoria lancamentoCategoria, Double valor, String data) {
+        this.id = id;
+        this.decricao = decricao;
+        this.lancamentoCategoria = lancamentoCategoria;
+        this.valor = valor;
+        this.data = data;
     }
 
     public int getId() {
@@ -53,5 +64,13 @@ public class Lancamento {
         } else {
             return false;
         }
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 }

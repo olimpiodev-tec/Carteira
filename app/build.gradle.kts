@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.carteira"
+    namespace = "com.olimpiodev.tect.carteira"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.carteira"
+        applicationId = "com.olimpiodev.tec.carteira"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

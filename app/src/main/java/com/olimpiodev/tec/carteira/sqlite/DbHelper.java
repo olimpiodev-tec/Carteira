@@ -1,4 +1,4 @@
-package com.example.carteira.sqlite;
+package com.olimpiodev.tec.carteira.sqlite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,12 +13,14 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COLUMN_LANCAMENTO_CATEGORIA = "lancamento_categoria";
     public static final String COLUMN_DESCRICAO = "decricao";
     public static final String COLUMN_VALOR = "valor";
+    public static final String COLUMN_DATA = "data";
 
     private static final String CREATE_TABLE =
             "CREATE TABLE " + TABLE_LANCAMENTOS_NAME + "(" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_VALOR + " REAL, " +
                     COLUMN_LANCAMENTO_CATEGORIA + " TEXT, " +
+                    COLUMN_DATA + " TEXT, " +
                     COLUMN_DESCRICAO + " TEXT)";
 
     public DbHelper(Context context) {

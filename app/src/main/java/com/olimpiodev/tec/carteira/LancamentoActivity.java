@@ -1,7 +1,6 @@
-package com.example.carteira;
+package com.olimpiodev.tec.carteira;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -16,9 +15,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.carteira.dao.LancamentoDAO;
-import com.example.carteira.enumeracao.LancamentoCategoria;
-import com.example.carteira.model.Lancamento;
+import com.olimpiodev.tec.carteira.dao.LancamentoDAO;
+import com.olimpiodev.tec.carteira.enumeracao.LancamentoCategoria;
+import com.olimpiodev.tec.carteira.model.Lancamento;
+import com.olimpiodev.tect.carteira.R;
 
 import java.util.Locale;
 import java.util.Objects;

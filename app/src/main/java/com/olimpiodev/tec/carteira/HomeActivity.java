@@ -1,12 +1,15 @@
-package com.example.carteira;
+package com.olimpiodev.tec.carteira;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Spinner;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.activity.EdgeToEdge;
@@ -15,9 +18,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.carteira.dao.LancamentoDAO;
-import com.example.carteira.model.Lancamento;
+import com.olimpiodev.tec.carteira.dao.LancamentoDAO;
+import com.olimpiodev.tec.carteira.model.Lancamento;
+import com.olimpiodev.tect.carteira.R;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -37,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         confgureToolbarHome();
         handleClickAddLancamento();
         loadLancamentos();
+        handleClickFiltro();
     }
 
     private void confgureToolbarHome() {
@@ -81,10 +87,50 @@ public class HomeActivity extends AppCompatActivity {
                             .concat(" - ").concat("R$ ")
                             .concat(lancamento.getValor().toString())
                             .concat(" - ")
-                            .concat(lancamento.getLancamentoCategoria().getDescricao()));
+                            .concat(lancamento.getLancamentoCategoria().getDescricao())
+                            .concat(" - ").concat(lancamento.getData()));
         }
 
         ListView listViewLancamentos = findViewById(R.id.listViewLancamentos);
         listViewLancamentos.setAdapter(adapter);
+    }
+
+    private void handleClickFiltro() {
+        ImageButton imageButtonFiltro = findViewById(R.id.imageButtonFiltro);
+        imageButtonFiltro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
+                builder.setTitle("Selecione Ano / Mês");
+
+                LinearLayout linearLayout = new LinearLayout(HomeActivity.this);
+                ArrayList<String> meses = new ArrayList<String>();
+                meses.add("Janeiro");
+                meses.add("Fevereiro");
+                meses.add("Março");
+                meses.add("Abril");
+                meses.add("Maio");
+                meses.add("Junho");
+                meses.add("Julho");
+                meses.add("Agosto");
+                meses.add("Setembro");
+                meses.add("Outubro");
+                meses.add("Novembro");
+                meses.add("Dezembro");
+
+                Spinner spinnerMeses = new Spinner(HomeActivity.this);
+                ArrayAdapter<String> mesesAdapter = new ArrayAdapter<String>(
+                    HomeActivity.this,
+                    android.R.layout.simple_spinner_dropdown_item,
+                    meses
+                );
+                spinnerMeses.setAdapter(mesesAdapter);
+
+                linearLayout.addView(spinnerMeses);
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
     }
 }

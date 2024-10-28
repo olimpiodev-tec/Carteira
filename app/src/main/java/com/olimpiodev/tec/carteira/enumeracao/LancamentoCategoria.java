@@ -1,4 +1,4 @@
-package com.example.carteira.enumeracao;
+package com.olimpiodev.tec.carteira.enumeracao;
 
 public enum LancamentoCategoria {
     ENTRADA("Entrada"),
