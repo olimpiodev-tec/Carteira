@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.olimpiodev.tect.carteira"
+    namespace = "com.olimpiodev.tec.carteira"
     compileSdk = 34
 
     defaultConfig {

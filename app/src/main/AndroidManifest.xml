@@ -13,14 +13,18 @@
         android:theme="@style/Theme.Carteira"
         tools:targetApi="31">
         <activity
-            android:name=".LancamentoActivity"
+            android:name=".view.MoneyBagActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".view.ReportActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".view.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Carteira">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

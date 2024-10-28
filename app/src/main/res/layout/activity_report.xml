@@ -5,10 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.HomeActivity">
+    tools:context=".view.ReportActivity">
 
     <View
-        android:id="@+id/viewHome"
+        android:id="@+id/viewReport"
         android:layout_width="0dp"
         android:layout_height="@dimen/nav"
         android:background="@color/primary"
@@ -23,10 +23,11 @@
         android:text="@string/carteira"
         android:textColor="@color/white"
         android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="@+id/viewHome"
-        app:layout_constraintEnd_toEndOf="@+id/viewHome"
-        app:layout_constraintStart_toStartOf="@+id/viewHome"
-        app:layout_constraintTop_toTopOf="@+id/viewHome" />
+        app:layout_constraintBottom_toBottomOf="@+id/viewReport"
+        app:layout_constraintEnd_toEndOf="@+id/viewReport"
+        app:layout_constraintStart_toStartOf="@+id/viewReport"
+        app:layout_constraintTop_toTopOf="@+id/viewReport" />
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="@dimen/menu_w"
@@ -50,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".3"
                 android:background="@android:color/transparent"
-                android:src="@drawable/currency_exchange_activated" />
+                android:src="@drawable/currency" />
 
             <ImageButton
                 android:id="@+id/imageButton2"
@@ -58,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".3"
                 android:background="@android:color/transparent"
-                android:src="@drawable/summarize" />
+                android:src="@drawable/summarize_activated" />
 
             <ImageButton
                 android:id="@+id/imageButton3"
@@ -69,29 +70,5 @@
                 android:src="@drawable/money_bag" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="390dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
