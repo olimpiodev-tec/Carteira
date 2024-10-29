@@ -4,4 +4,10 @@
     <string name="usuario">Usuário</string>
     <string name="senha">Senha</string>
     <string name="entrar">Entrar</string>
+    <string name="entrada">Entrada</string>
+    <string name="sa_da">Saída</string>
+    <string name="descricao">Descrição</string>
+    <string name="valor">Valor</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="lancamento">Lançamento</string>
 </resources>
