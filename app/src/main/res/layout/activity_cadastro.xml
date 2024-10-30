@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.CadastroActivity">
+
+    <View
+        android:id="@+id/viewCadastro"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/nav"
+        android:background="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/carteira"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCadastro"
+        app:layout_constraintEnd_toEndOf="@+id/viewCadastro"
+        app:layout_constraintStart_toStartOf="@+id/viewCadastro"
+        app:layout_constraintTop_toTopOf="@+id/viewCadastro" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewCadastro"
+        app:layout_constraintVertical_bias="0.0">
+
+        <EditText
+            android:id="@+id/editTextNome"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="@dimen/padding_input"
+            android:layout_marginTop="@dimen/margin_top_input"
+            android:background="@drawable/input_rounded"
+            android:hint="@string/nome"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTextSobrenome"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="@dimen/padding_input"
+            android:layout_marginTop="@dimen/margin_top_input"
+            android:background="@drawable/input_rounded"
+            android:hint="@string/sobrenome"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTextSenha"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:padding="@dimen/padding_input"
+            android:background="@drawable/input_rounded"
+            android:hint="@string/senha"
+            android:inputType="numberPassword" />
+
+        <EditText
+            android:id="@+id/editTextConfirmaSenha"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:padding="@dimen/padding_input"
+            android:background="@drawable/input_rounded"
+            android:hint="@string/confirma_senha"
+            android:inputType="numberPassword" />
+
+        <EditText
+            android:id="@+id/editTextTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:padding="@dimen/padding_input"
+            android:background="@drawable/input_rounded"
+            android:hint="@string/telefone"
+            android:inputType="numberPassword" />
+
+        <Button
+            android:id="@+id/buttonCadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/button_rounded"
+            android:layout_marginTop="@dimen/margin_top_input"
+            android:text="@string/cadastrar" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/cadastro"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
