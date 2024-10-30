@@ -1,6 +1,7 @@
 package com.olimpiodev.tec.carteira.view;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,7 @@ import com.olimpiodev.tec.carteira.model.Lancamento;
 
 import java.util.List;
 
-public class MoneyBagActivity extends AppCompatActivity {
+public class MoneyBagActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Spinner spinnerCategoria;
     private ArrayAdapter<Categoria> categoriaArrayAdapter;
@@ -53,10 +54,20 @@ public class MoneyBagActivity extends AppCompatActivity {
         categoriaDAO = new CategoriaDAO(this);
         spinnerCategoria = findViewById(R.id.spinnerCategoria);
 
+        ImageButton imageButtonLancamentos = findViewById(R.id.imageButtonLancamentos);
+        imageButtonLancamentos.setOnClickListener(this);
+
         loadCategorias();
         handleAddCategoria();
         handleRadioButton();
         handleCadastrar();
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.imageButtonLancamentos) {
+            finish();
+        }
     }
 
     private void loadCategorias() {
@@ -172,4 +183,5 @@ public class MoneyBagActivity extends AppCompatActivity {
             }
         });
     }
+
 }

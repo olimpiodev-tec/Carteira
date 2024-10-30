@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -15,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.olimpiodev.tec.carteira.R;
+import com.olimpiodev.tec.carteira.adapter.LancamentoAdapter;
 import com.olimpiodev.tec.carteira.dao.LancamentoDAO;
 import com.olimpiodev.tec.carteira.model.Lancamento;
 
@@ -57,13 +57,9 @@ public class HomeActivity extends AppCompatActivity {
     private void loadLancamentos() {
         LancamentoDAO lancamentoDAO = new LancamentoDAO(this);
         List<Lancamento> lancamentos = lancamentoDAO.listarLancamentos();
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
-
-        for (Lancamento lancamento: lancamentos) {
-            adapter.add(lancamento.showLancamentoInListView());
-        }
+        LancamentoAdapter lancamentosAdapter = new LancamentoAdapter(lancamentos, HomeActivity.this);
 
         ListView listViewLancamentos = findViewById(R.id.listViewLancamentos);
-        listViewLancamentos.setAdapter(adapter);
+        listViewLancamentos.setAdapter(lancamentosAdapter);
     }
 }

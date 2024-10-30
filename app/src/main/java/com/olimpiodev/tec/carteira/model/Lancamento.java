@@ -38,13 +38,17 @@ public class Lancamento {
         this.ano = calendar.get(Calendar.YEAR);
     }
 
-    public String showLancamentoInListView() {
+    public String showDataFormatada() {
         return String.format(
-                this.categoria
-                        .concat(" | ")
-                        .concat(this.descricao)
-                        .concat(" | ")
-                        .concat(String.valueOf(this.valor)));
+                String.valueOf(this.dia)
+                        .concat("/")
+                        .concat(String.valueOf(this.mes))
+                        .concat("/")
+                        .concat(String.valueOf(this.ano)));
+    }
+
+    public String showValor() {
+        return "R$ " .concat(String.valueOf(this.valor).replace(".", ","));
     }
 
     public int getId() {
